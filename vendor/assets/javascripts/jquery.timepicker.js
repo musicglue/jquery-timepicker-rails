@@ -140,20 +140,21 @@ requires jQuery 1.7+
 				return;
 			}
 
+			var settings = self.data('timepicker-settings');
+
 			// make sure other pickers are hidden
 			methods.hide();
 
-			if ((self.offset().top + self.outerHeight(true) + list.outerHeight()) > $(window).height() + $(window).scrollTop()) {
+			if ((self.position().top + self.outerHeight(true) + list.outerHeight()) > $(window).height() + $(window).scrollTop()) {
 				// position the dropdown on top
-				list.css({ 'left':(self.offset().left), 'top': self.offset().top - list.outerHeight() });
+				list.css({ 'left':(self.position().left), 'top': self.position().top - list.outerHeight() });
 			} else {
 				// put it under the input
-				list.css({ 'left':(self.offset().left), 'top': self.offset().top + self.outerHeight() });
+				list.css({ 'left':(self.position().left), 'top': self.position().top + self.outerHeight() });
 			}
 
 			list.show();
 
-			var settings = self.data('timepicker-settings');
 			// position scrolling
 			var selected = list.find('.ui-timepicker-selected');
 
