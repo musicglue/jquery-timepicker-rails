@@ -644,6 +644,7 @@ requires jQuery 1.7+
 
 	function _time2int(timeString)
 	{
+                if (typeof(timeString) == 'undefined') return null;
 		if (timeString === '') return null;
 		if (timeString+0 == timeString) return timeString;
 
